@@ -14,7 +14,7 @@ class Main extends Component {
 
     };
 
-    // this is the initialization, what do you want the page to display when page it's first loaded
+    // initial loading
     componentDidMount() {
         API.getUsers().then(res => this.setState({
             employees: res.data.results,
@@ -22,7 +22,7 @@ class Main extends Component {
         })).catch(err => console.log(err))
     }
 
-    //if "name" it's clicked employee are shown by asc/desc order
+    //sort by Name aphabetically/reverse
 
     sortByName = () => {
         const filtereds = this.state.filteredEmployees;
@@ -46,7 +46,7 @@ class Main extends Component {
 
         }
     }
-    //when input is changing it will dynamically show the associates names that match in the screen
+    //filtering ppl as the name is being searched
     handleInputChange = event => {
 
         const employees = this.state.employees;
@@ -54,8 +54,7 @@ class Main extends Component {
         const filteredEmployees = employees.filter(employee => employee.name.first.toLowerCase().indexOf(UserInput.toLowerCase()) > -1
         )
         this.setState({
-            //change the state of  filteredEmployes now it holds all the employes that matches users
-            // search and will be passed down in this state
+          //state changes results to filtered employees
 
             filteredEmployees,
 
@@ -65,20 +64,18 @@ class Main extends Component {
     };
 
 
-    //API call triggered when page it's refreshed and  when application it's loaded 
+    //API call when page is loaded
     employeeSearch = () => {
         API.getUsers()
             .then(res => this.setState({
-
-                //change their both states to hold all the data from the API call(all employess) and will be passed down trough props like that
-                //employee will remain the same and filteredEmployes will be changed and passed down during application's life. Employee will always hold all employess.
+                //to keep all employees even tho some are filtered to be viewed
                 filteredEmployees: res.data.results,
                 employees: res.data.results
             }))
             .catch(err => console.log(err))
     }
 
-    //when button search it's clicked
+    //when button search is clicked
     handleSearch = event => {
         event.preventDefault();
         if (!this.state.search) {
@@ -86,7 +83,7 @@ class Main extends Component {
         }
         const { employees, search } = this.state;
 
-        //filters the object looking for the value that matches the value entered in the input box by the user  (search.this.state)
+        //filters by searched item
         const filteredEmployees = employees.filter(employee => employee.name.first.toLowerCase().includes(search.toLowerCase()));
 
         this.setState({

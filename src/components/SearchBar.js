@@ -9,6 +9,13 @@ function SearchBar(props) {
 
             <header className="z-depth-3 col s12" >
                 <div className="row">
+                    <div className="col s6 ">
+                        <h1>Employee Directory</h1>
+                    </div>
+                    
+                </div>
+                
+                <div className="row">
 
                     <div className="col s6 ">
 
@@ -35,15 +42,10 @@ function SearchBar(props) {
                                 className=" btn z-depth-2 waves-effect  searchBttn"
                                 onClick={props.handleSearch} >Search</button>
                         </div>
-
-
-
-
-
-
                     </div>
                     
                 </div>
+                
             </header>
         </div>
     )
