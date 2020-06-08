@@ -1,0 +1,10 @@
+.tableEmployee{
+    margin: 0 auto;
+    width: 90%;
+}
+
+  
+.tableEmployee th {
+    cursor: pointer;
+}
+  

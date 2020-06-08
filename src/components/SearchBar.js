@@ -14,12 +14,12 @@ function SearchBar(props) {
                     </div>
                     
                 </div>
-                
+                <hr></hr>
                 <div className="row">
 
                     <div className="col s6 ">
 
-                        <div className="col s6 inputAndButton right-align ">
+                        <div className="col s6 searchBar right-align ">
 
                             <input
                                 onChange={props.handleInputChange}
@@ -29,19 +29,16 @@ function SearchBar(props) {
                                 name="search"
                                 list="employee"
                                 className=" inputBox  "
-                                placeholder="Search by name" />
-
-
-                        </div>
-                        <div className="col m4">
-
-
+                                placeholder="Search by name" 
+                            />
                             <button
                                 type="submit"
                                 value=""
                                 className=" btn z-depth-2 waves-effect  searchBttn"
-                                onClick={props.handleSearch} >Search</button>
+                                onClick={props.handleSearch} ><i class="fa fa-search" aria-hidden="true"></i></button>
+
                         </div>
+                    
                     </div>
                     
                 </div>
