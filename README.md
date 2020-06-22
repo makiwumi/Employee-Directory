@@ -1,5 +1,7 @@
 # Employee-Directory
 An app that displays a list of employees by name, phone number and email. 
+
+Live App  https://makiwumi.github.io/Employee-Directory/
            
 ## Table of Contents
             
